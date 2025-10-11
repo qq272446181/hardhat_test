@@ -24,6 +24,15 @@ contract MyERC20 is IERC20{
         require(msg.sender == _owner,"only owner can mint"); // 只有合约所有者才能铸造代币
         _update(address(0), msg.sender, amount);
     }
+    function name() public view returns (string memory){
+        return _name;
+    }
+    function symbol() public view returns (string memory){
+        return _symbol;
+    }
+    function decimals() public view returns (uint8){
+        return _decimals;
+    }
     //代币总供应量
     function totalSupply() public view returns (uint256){
         return _totalSupply;
